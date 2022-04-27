@@ -71,7 +71,124 @@ We decided 100 cars per parking lot was a good sample size, and we measured each
 ```{r echo=FALSE}
 #all parking lots together
 
-hist(All_Parking$curb)
+# this gets the average of each type of car measurements
+acura_left_avg <- mean(All_Parking$left[grep("acura", All_Parking$make)])
+acura_right_avg <- mean(All_Parking$right[grep("acura", All_Parking$make)])
+acura_curb_avg <- mean(All_Parking$curb[grep("acura", All_Parking$make)])
 
+audi_left_avg <- mean(All_Parking$left[grep("audi", All_Parking$make)])
+audi_right_avg <- mean(All_Parking$right[grep("audi", All_Parking$make)])
+audi_curb_avg <- mean(All_Parking$curb[grep("audi", All_Parking$make)])
 
+bmw_left_avg <- mean(All_Parking$left[grep("bmw", All_Parking$make)])
+bmw_right_avg <- mean(All_Parking$right[grep("bmw", All_Parking$make)])
+bmw_curb_avg <- mean(All_Parking$curb[grep("bmw", All_Parking$make)])
+
+buick_left_avg <- mean(All_Parking$left[grep("buick", All_Parking$make)])
+buick_right_avg <- mean(All_Parking$right[grep("buick", All_Parking$make)])
+buick_curb_avg <- mean(All_Parking$curb[grep("buick", All_Parking$make)])
+
+chevy_left_avg <- mean(All_Parking$left[grep("chevy", All_Parking$make)])
+chevy_right_avg <- mean(All_Parking$right[grep("chevy", All_Parking$make)])
+chevy_curb_avg <- mean(All_Parking$curb[grep("chevy", All_Parking$make)])
+
+chrysler_left_avg <- mean(All_Parking$left[grep("chrysler", All_Parking$make)])
+chrysler_right_avg <- mean(All_Parking$right[grep("chrysler", All_Parking$make)])
+chrysler_curb_avg <- mean(All_Parking$curb[grep("chrysler", All_Parking$make)])
+
+dodge_left_avg <- mean(All_Parking$left[grep("dodge", All_Parking$make)])
+dodge_right_avg <- mean(All_Parking$right[grep("dodge", All_Parking$make)])
+dodge_curb_avg <- mean(All_Parking$curb[grep("dodge", All_Parking$make)])
+
+ford_left_avg <- mean(All_Parking$left[grep("ford", All_Parking$make)])
+ford_right_avg <- mean(All_Parking$right[grep("ford", All_Parking$make)])
+ford_curb_avg <- mean(All_Parking$curb[grep("ford", All_Parking$make)])
+
+gmc_left_avg <- mean(All_Parking$left[grep("gmc", All_Parking$make)])
+gmc_right_avg <- mean(All_Parking$right[grep("gmc", All_Parking$make)])
+gmc_curb_avg <- mean(All_Parking$curb[grep("gmc", All_Parking$make)])
+
+honda_left_avg <- mean(All_Parking$left[grep("honda", All_Parking$make)])
+honda_right_avg <- mean(All_Parking$right[grep("honda", All_Parking$make)])
+honda_curb_avg <- mean(All_Parking$curb[grep("honda", All_Parking$make)])
+
+hyundai_left_avg <- mean(All_Parking$left[grep("hyundai", All_Parking$make)])
+hyundai_right_avg <- mean(All_Parking$right[grep("hyundai", All_Parking$make)])
+hyundai_curb_avg <- mean(All_Parking$curb[grep("hyundai", All_Parking$make)])
+
+infiniti_left_avg <- mean(All_Parking$left[grep("infiniti", All_Parking$make)])
+infiniti_right_avg <- mean(All_Parking$right[grep("infiniti", All_Parking$make)])
+infiniti_curb_avg <- mean(All_Parking$curb[grep("infiniti", All_Parking$make)])
+
+jeep_left_avg <- mean(All_Parking$left[grep("jeep", All_Parking$make)])
+jeep_right_avg <- mean(All_Parking$right[grep("jeep", All_Parking$make)])
+jeep_curb_avg <- mean(All_Parking$curb[grep("jeep", All_Parking$make)])
+
+kia_left_avg <- mean(All_Parking$left[grep("kia", All_Parking$make)])
+kia_right_avg <- mean(All_Parking$right[grep("kia", All_Parking$make)])
+kia_curb_avg <- mean(All_Parking$curb[grep("kia", All_Parking$make)])
+
+lexus_left_avg <- mean(All_Parking$left[grep("lexus", All_Parking$make)])
+lexus_right_avg <- mean(All_Parking$right[grep("lexus", All_Parking$make)])
+lexus_curb_avg <- mean(All_Parking$curb[grep("lexus", All_Parking$make)])
+
+lexus_left_avg <- mean(All_Parking$left[grep("lexus", All_Parking$make)])
+lexus_right_avg <- mean(All_Parking$right[grep("lexus", All_Parking$make)])
+lexus_curb_avg <- mean(All_Parking$curb[grep("lexus", All_Parking$make)])
+
+lincoln_left_avg <- mean(All_Parking$left[grep("lincoln", All_Parking$make)])
+lincoln_right_avg <- mean(All_Parking$right[grep("lincoln", All_Parking$make)])
+lincoln_curb_avg <- mean(All_Parking$curb[grep("lincoln", All_Parking$make)])
+
+maserati_left_avg <- mean(All_Parking$left[grep("maserati", All_Parking$make)])
+maserati_right_avg <- mean(All_Parking$right[grep("maserati", All_Parking$make)])
+maserati_curb_avg <- mean(All_Parking$curb[grep("maserati", All_Parking$make)])
+
+mazda_left_avg <- mean(All_Parking$left[grep("mazda", All_Parking$make)])
+mazda_right_avg <- mean(All_Parking$right[grep("mazda", All_Parking$make)])
+mazda_curb_avg <- mean(All_Parking$curb[grep("mazda", All_Parking$make)])
+
+mercedes_left_avg <- mean(All_Parking$left[grep("mercedes", All_Parking$make)])
+mercedes_right_avg <- mean(All_Parking$right[grep("mercedes", All_Parking$make)])
+mercedes_curb_avg <- mean(All_Parking$curb[grep("mercedes", All_Parking$make)])
+
+mitsubishi_left_avg <- mean(All_Parking$left[grep("mitsubishi", All_Parking$make)])
+mitsubishi_right_avg <- mean(All_Parking$right[grep("mitsubishi", All_Parking$make)])
+mitsubishi_curb_avg <- mean(All_Parking$curb[grep("mitsubishi", All_Parking$make)])
+
+nissan_left_avg <- mean(All_Parking$left[grep("nissan", All_Parking$make)])
+nissan_right_avg <- mean(All_Parking$right[grep("nissan", All_Parking$make)])
+nissan_curb_avg <- mean(All_Parking$curb[grep("nissan", All_Parking$make)])
+
+porche_left_avg <- mean(All_Parking$left[grep("porche", All_Parking$make)])
+porche_right_avg <- mean(All_Parking$right[grep("porche", All_Parking$make)])
+porche_curb_avg <- mean(All_Parking$curb[grep("porche", All_Parking$make)])
+
+ram_left_avg <- mean(All_Parking$left[grep("ram", All_Parking$make)])
+ram_right_avg <- mean(All_Parking$right[grep("ram", All_Parking$make)])
+ram_curb_avg <- mean(All_Parking$curb[grep("ram", All_Parking$make)])
+
+saturn_left_avg <- mean(All_Parking$left[grep("saturn", All_Parking$make)])
+saturn_right_avg <- mean(All_Parking$right[grep("saturn", All_Parking$make)])
+saturn_curb_avg <- mean(All_Parking$curb[grep("saturn", All_Parking$make)])
+
+subi_left_avg <- mean(All_Parking$left[grep("subi", All_Parking$make)])
+subi_right_avg <- mean(All_Parking$right[grep("subi", All_Parking$make)])
+subi_curb_avg <- mean(All_Parking$curb[grep("subi", All_Parking$make)])
+
+tesla_left_avg <- mean(All_Parking$left[grep("tesla", All_Parking$make)])
+tesla_right_avg <- mean(All_Parking$right[grep("tesla", All_Parking$make)])
+tesla_curb_avg <- mean(All_Parking$curb[grep("tesla", All_Parking$make)])
+
+toyota_left_avg <- mean(All_Parking$left[grep("toyota", All_Parking$make)])
+toyota_right_avg <- mean(All_Parking$right[grep("toyota", All_Parking$make)])
+toyota_curb_avg <- mean(All_Parking$curb[grep("toyota", All_Parking$make)])
+
+volvo_left_avg <- mean(All_Parking$left[grep("volvo", All_Parking$make)])
+volvo_right_avg <- mean(All_Parking$right[grep("volvo", All_Parking$make)])
+volvo_curb_avg <- mean(All_Parking$curb[grep("volvo", All_Parking$make)])
+
+vw_left_avg <- mean(All_Parking$left[grep("vw", All_Parking$make)])
+vw_right_avg <- mean(All_Parking$right[grep("vw", All_Parking$make)])
+vw_curb_avg <- mean(All_Parking$curb[grep("vw", All_Parking$make)])
 ```
