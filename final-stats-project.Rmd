@@ -37,12 +37,6 @@ We did not measure any handicap spots in the parking lots we were at so we canno
 
 Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up agains a side curb while spots on a bend can be "crushed" because the space available. 
 
-
-<h1> Analysis <h1/>
-
-
-
-<!--BLAKES AREA-->
 <h1> Data Collection Process </h1>
 There are many ways that we could have collected data from the car parking lots, but to answer our question we recorded a few measurements. Listed below is how we decided to measure cars in the parking spots:
 <ul>
@@ -64,3 +58,6 @@ We wanted to choose parking lots that would give us the most random selection of
 </ul>
 
 We decided 100 cars per parking lot was a good sample size, and we measured each lot on a different days and at different times to make the sample more random.
+
+
+<h1> Analysis <h1/>
