@@ -1,17 +1,22 @@
 ---
-title: "final-stats-project"
+title: "Who Parks the best at the University of Utah?"
 output: html_document
+authors: Gabriel Bautista, Blake Van Dyken
 date: '2022-04-27'
 ---
+Gabriel Bautista and Blake Van Dyken
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r echo=FALSE}
 #load csvs
-MEB_Parking <- read.csv("MEB Parking Lot.csv")
-Union_Parking <- read.csv("Union Parking Lot.csv")
-Student_Store_Parking <- read.csv("Student Store Parking Lot.csv")
+MEB_Parking <- read.csv("resources/MEB Parking Lot.csv")
+Union_Parking <- read.csv("resources/Union Parking Lot.csv")
+Student_Store_Parking <- read.csv("resources/Student Store Parking Lot.csv")
 
 ```
+
+<h1>Our Idea</h1>
+<img src="resources/idea.png"/>
