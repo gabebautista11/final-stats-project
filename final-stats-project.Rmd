@@ -31,11 +31,15 @@ Without recording the license plat of the car (some cars also having temp plates
 
 We had to consider what was the "curb". While the parking lot at the student store and The Union had an island in front of each space meaning cars would not be front to front allowing them to park slightly worse without any penalty. On the other hand the parking in MEB just had a line dividing the front making cars park more carefully (hopefully) and not as far forward.
 
+The cars in each parking lot could park facing the curb or facing the opposite side, thus many large cars with large trunks would have negative measurements.
+
 We also had no way to tell if the persons car we were measuring attended the University as a student, staff, faculty, or if they were just visiting. We have no way to tell if this person would ever return to the campus or if parking there was a one time thing.
 
 We did not measure any handicap spots in the parking lots we were at so we cannot consider that in our final conclusion.
 
 Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up agains a side curb while spots on a bend can be "crushed" because the space available. 
+
+The last constraint we had on this study was time, it took roughly an hour to measure each parking lot, or ~1 hour per 100 cars. We do not have enough time to measure every single parking space at the Univerity of Utah so we picked the largest and most dense/popular parking lots to take our measurements from.
 
 <h1> Data Collection Process </h1>
 There are many ways that we could have collected data from the car parking lots, but to answer our question we recorded a few measurements. Listed below is how we decided to measure cars in the parking spots:
@@ -44,6 +48,7 @@ There are many ways that we could have collected data from the car parking lots,
   <li>Measured the distance from the left side of the parking spot to the front door handle</li>
   <li>Measured the distance from the right side of the parking spot to the front door handle</li>
   <li>Measured the distance from the front license plate to the curb or to the front line of the parking spot
+  <li>A positive measurement is how far from the inside of the parking line the car is, and a negative measurement is how far over the car was from the inside of the line</li>
   <li>Recorded the size of the car (small, medium, or large)</li>
   <li>Recorded the make of the car (subaru, toyota, etc.)</li>
   <li>Recorded the state of the license plate</li>
