@@ -33,7 +33,9 @@ We had to consider what was the "curb". While the parking lot at the student sto
 
 We also had no way to tell if the persons car we were measuring attended the University as a student, staff, faculty, or if they were just visiting. We have no way to tell if this person would ever return to the campus or if parking there was a one time thing.
 
-We did not measure any handicap spots in the parking lots we were at so we cannot consider that in our final conclusion. 
+We did not measure any handicap spots in the parking lots we were at so we cannot consider that in our final conclusion.
+
+Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up agains a side curb while spots on a bend can be "crushed" because the space available. 
 
 
 <h1> Analysis <h1/>
