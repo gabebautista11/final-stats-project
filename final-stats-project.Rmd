@@ -15,6 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 MEB_Parking <- read.csv("resources/MEB Parking Lot.csv")
 Union_Parking <- read.csv("resources/Union Parking Lot.csv")
 Student_Store_Parking <- read.csv("resources/Student Store Parking Lot.csv")
+All_Parking <- rbind(MEB_Parking, Student_Store_Parking, Union_Parking)
 
 ```
 
@@ -66,3 +67,11 @@ We decided 100 cars per parking lot was a good sample size, and we measured each
 
 
 <h1> Analysis <h1/>
+
+```{r echo=FALSE}
+#all parking lots together
+
+hist(All_Parking$curb)
+
+
+```
