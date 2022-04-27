@@ -53,3 +53,4 @@ We wanted to choose parking lots that would give us the most random selection of
   <li>University Campus Store Parking Lot</li>
 </ul>
 
+We decided 100 cars per parking lot was a good sample size, and we measured each lot on a different days and at different times to make the sample more random.
