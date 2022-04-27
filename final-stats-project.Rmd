@@ -1,5 +1,5 @@
 ---
-title: "Who Parks the best at the University of Utah?"
+title: "Who parks the best at the University of Utah?"
 output: html_document
 authors: Gabriel Bautista, Blake Van Dyken
 date: '2022-04-27'
@@ -18,17 +18,27 @@ Student_Store_Parking <- read.csv("resources/Student Store Parking Lot.csv")
 
 ```
 
-<h1>Our Idea</h1>
+<h1> Introduction <h1/>
+We are were walking through the parking lot one day after stats class and looked over at a car that was parked awfully. We wondered, "why did that person park so poorly? Could it be because he is driving a small Toyota?" This gave us our final project idea. We wanted to find out what is the reason for all these awful parkers around campus. The question we then dedicated our life to answering was "What kind of car owners at the University of Utah park the best?" This will help us figure out who we should park next too and who to avoid for the rest of our time at the University. Below we have supplied the first idea sketch we made.
+
 <img src="resources/idea.png"/>
 
 
+<h1> The Imperfections Of Our Study</h1>
+While collecting our data we realized where the pitfalls were.
+
+Without recording the license plat of the car (some cars also having temp plates) we could not know if we were measuring the same persons car twice. We tried to minimize this problem by measuring multiple parking lots that did not access the same group of buildings in the hope that this coincidence would not happen. 
+
+We had to consider what was the "curb". While the parking lot at the student store and The Union had an island in front of each space meaning cars would not be front to front allowing them to park slightly worse without any penalty. On the other hand the parking in MEB just had a line dividing the front making cars park more carefully (hopefully) and not as far forward.
+
+We also had no way to tell if the persons car we were measuring attended the University as a student, staff, faculty, or if they were just visiting. We have no way to tell if this person would ever return to the campus or if parking there was a one time thing.
+
+We did not measure any handicap spots in the parking lots we were at so we cannot consider that in our final conclusion.
+
+Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up agains a side curb while spots on a bend can be "crushed" because the space available. 
 
 
-
-
-
-
-
+<h1> Analysis <h1/>
 
 
 
