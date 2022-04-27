@@ -33,3 +33,23 @@ Student_Store_Parking <- read.csv("resources/Student Store Parking Lot.csv")
 
 
 <!--BLAKES AREA-->
+<h1> Data Collection Process </h1>
+There are many ways that we could have collected data from the car parking lots, but to answer our question we recorded a few measurements. Listed below is how we decided to measure cars in the parking spots:
+<ul>
+  <li>We used a 25 ft tape measure and rounded our results to the nearest half inch</li>
+  <li>Measured the distance from the left side of the parking spot to the front door handle</li>
+  <li>Measured the distance from the right side of the parking spot to the front door handle</li>
+  <li>Measured the distance from the front license plate to the curb or to the front line of the parking spot
+  <li>Recorded the size of the car (small, medium, or large)</li>
+  <li>Recorded the make of the car (subaru, toyota, etc.)</li>
+  <li>Recorded the state of the license plate</li>
+  <li>We also measured the size of one of the parking spots in each lot</li>
+</ul>
+
+We wanted to choose parking lots that would give us the most random selection of cars, thus we chose the most popular and high traffic parking lots at the University of Utah:
+<ul>
+  <li>Merrill Engineering Building Parking Lot</li>
+  <li>Student Union Parking Lot</li>
+  <li>University Campus Store Parking Lot</li>
+</ul>
+
