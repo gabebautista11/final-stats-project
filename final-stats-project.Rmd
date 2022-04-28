@@ -311,3 +311,22 @@ Next we also recorded the size of the car. Trucks and SUV's were labeled L for L
 table(All_Parking$state)
 ```
 Finally we can take at the registered state on the license plates of the cars. We would expect most of the cars to come from Utah (UT) and in the table above we can see that this is true, and 251 of the 300 cars we measured were from Utah, while the second most popular state was California (CA), which had only 15 cars that we measured. This is somewhat surprising, as we would expect more cars from neighboring states such as Idaho or Colorado; however, we guess that Californians like Utah better than the neighboring states do!
+
+<h1> Answering the overall Question </h1>
+In order to answer our original question we must restate it in a more statistical fashion. Nevertheless; we must change the question "What kind of car owners at the University of Utah park the best?" to "Which car's total sum of average distances from all 3 sides of a parking space is closest to the total sample sum of average distances at the University of Utah". In other words, we will take the average measured distance from all three sides of a parking space, add them together and that will give us a total average (and a single number) that we can compare. We will then compare this to the total sum of average distances from all three sides of a parking space of the whole sample; thus, whichever type of car is closest to this value answers the question.
+
+Below is a list of all the sum of average distances for every type of car that we measured
+```{r echo=FALSE}
+
+for(i in colnames(all_make_stats_df)){
+  print(stringr::str_replace(i, "_stats", " sum of average distance (inches)"))
+  print(sum(all_make_stats_df[i]) / 3)
+}
+
+
+print("Sample sum of average distance (inches)")
+print((mean(All_Parking$curb) + mean(All_Parking$left) + mean(All_Parking$right))/3)
+```
+
+<h1> Conclusion </h1>
+In conclusion, we can infer from the data above that Acura's have the best parking at the University of Utah. However
