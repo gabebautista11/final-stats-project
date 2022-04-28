@@ -19,91 +19,6 @@ All_Parking <- rbind(MEB_Parking, Student_Store_Parking, Union_Parking)
 
 ```
 
-<h1> Introduction <h1/>
-We are were walking through the parking lot one day after stats class and looked over at a car that was parked awfully. We wondered, "why did that person park so poorly? Could it be because he is driving a small Toyota?" This gave us our final project idea. We wanted to find out what is the reason for all these awful parkers around campus. The question we then dedicated our life to answering was "What kind of car owners at the University of Utah park the best?" This will help us figure out who we should park next too and who to avoid for the rest of our time at the University. Below we have supplied the first idea sketch we made.
-
-<img src="resources/idea.png"/>
-
-
-<h1> The Imperfections Of Our Study</h1>
-While collecting our data we realized where the pitfalls were.
-
-Without recording the license plat of the car (some cars also having temp plates) we could not know if we were measuring the same persons car twice. We tried to minimize this problem by measuring multiple parking lots that did not access the same group of buildings in the hope that this coincidence would not happen. 
-
-We had to consider what was the "curb". While the parking lot at the student store and The Union had an island in front of each space meaning cars would not be front to front allowing them to park slightly worse without any penalty. On the other hand the parking in MEB just had a line dividing the front making cars park more carefully (hopefully) and not as far forward.
-
-The cars in each parking lot could park facing the curb or facing the opposite side, thus many large cars with large trunks would have negative measurements.
-
-We also had no way to tell if the persons car we were measuring attended the University as a student, staff, faculty, or if they were just visiting. We have no way to tell if this person would ever return to the campus or if parking there was a one time thing.
-
-We did not measure any handicap spots in the parking lots we were at so we cannot consider that in our final conclusion.
-
-Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up agains a side curb while spots on a bend can be "crushed" because the space available. 
-
-The last constraint we had on this study was time, it took roughly an hour to measure each parking lot, or ~1 hour per 100 cars. We do not have enough time to measure every single parking space at the Univerity of Utah so we picked the largest and most dense/popular parking lots to take our measurements from.
-
-<h1> Data Collection Process </h1>
-There are many ways that we could have collected data from the car parking lots, but to answer our question we recorded a few measurements. Listed below is how we decided to measure cars in the parking spots:
-<ul>
-  <li>We used a 25 ft tape measure and rounded our results to the nearest half inch</li>
-  <li>Measured the distance from the left side of the parking spot to the front door handle</li>
-  <li>Measured the distance from the right side of the parking spot to the front door handle</li>
-  <li>Measured the distance from the front license plate to the curb or to the front line of the parking spot
-  <li>A positive measurement is how far from the inside of the parking line the car is, and a negative measurement is how far over the car was from the inside of the line</li>
-  <li>Recorded the size of the car (small, medium, or large)</li>
-  <li>Recorded the make of the car (subaru, toyota, etc.)</li>
-  <li>Recorded the state of the license plate</li>
-  <li>We also measured the size of one of the parking spots in each lot</li>
-</ul>
-
-We wanted to choose parking lots that would give us the most random selection of cars, thus we chose the most popular and high traffic parking lots at the University of Utah:
-<ul>
-  <li>Merrill Engineering Building Parking Lot</li>
-  <li>Student Union Parking Lot</li>
-  <li>University Campus Store Parking Lot</li>
-</ul>
-
-We decided 100 cars per parking lot was a good sample size, and we measured each lot on a different days and at different times to make the sample more random.
-
-
-<h1> Analysis <h1/>
-In order to analyze our data, we should first look at the overall statistics of all three parking lots combined and we can infer some interesting things about our measurements
-```{r}
-# hist of measurements
-hist(All_Parking$curb, main=paste("Histogram of all curb measurements"), xlab = paste("Distance (inches)"))
-hist(rnorm(300, mean(All_Parking$curb), sd(All_Parking$curb)), add=T, col = rgb(1, 0, 0, 0.25))
-summary(All_Parking$curb)
-```
-Looking at all the cars measurements from the curb in grey, we can see that it seems to be normally distributed compared to the theoretical distribution in red graphed over it. The average car parked 4.68 inches away from the curb or front line of the parking spot. We can also see that someone parked 75 inches away from the curb, which was most likley a smaller car parked further back. Whereas the furthest someone parked over the curb was -42 inches and was most likely a large car.
-```{r}
-hist(All_Parking$left, main=paste("Histogram of all left measurements"), xlab = paste("Distance (inches)"))
-hist(rnorm(300, mean(All_Parking$left), sd(All_Parking$left)), add=T, col = rgb(0, 1, 0, 0.25))
-summary(All_Parking$left)
-```
-In this graph above I also compare the left side parking spot measurements to a theoretical normal distribution and we can see that the actual graph in grey has a few outliers who park over the curb (negative values). The average car is parked 13.61 inches away from the left side of the parking space. The maximum someone parked was 37 inches and we can safely say they were probably parked over the right side of the line if there car was that far away from the left. We can also say the opposite for the minimum value, which was -25 inches. This tells us that they are parked 25 inches over the left side of the parking spot.
-```{r}
-hist(All_Parking$right, main=paste("Histogram of all right measurements"), xlab = paste("Distance (inches)"))
-hist(rnorm(300, mean(All_Parking$right), sd(All_Parking$right)), add=T, col = rgb(0, 0, 1, 0.25))
-summary(All_Parking$right)
-```
-Lastly, looking at the distance measurements on the right side of the parking spot compared to the theoretical normal distribution in blue, we can see that there are some extreme outliers on both sides of the graph. We can also look at the minimum and maximum which are -16 inches and 52 inches respectively. The minimum tells us that someone had parked over the line on the right hand side, and the maximum tells us someone parked over the line on the left hand side. Finally, we can infer that the average car was parked about 13.41 inches away from the right hand side of a parking spot which is very close to the left hand side mean. This could possibly mean that the average person was parked acceptably in the center of the parking space.
-
-```{r}
-# Types of cars
-table(All_Parking$make)
-```
-Looking at the amount of car makes, we can see that from our sample, Toyotas are the most popular choice of car, followed by Subaru then Honda. Although it does not completely help us answer the question, it shows what cars are popular at the University of Utah and it also shows that since we can not measure the same amount of cars in each parking lot, our statistics may have some bias. For example, only one Lexus was measured; thus, the mean for that brand in this study is based off of that one car, compared to the Toyota sample which has many cars measured and can give us a more accurate mean.
-
-```{r}
-table(All_Parking$type)
-```
-Next we also recorded the size of the car. Trucks and SUV's were labeled L for Large, smaller SUV's and vans were labeled M for medium, and sedans and smaller cars were labeled S for Small. In our sample we have almost the same amount of Medium and Small cars, and very few large cars. This tells us that most people do not like to park large cars at the University of Utah.
-
-```{r}
-table(All_Parking$state)
-```
-Finally we can take at the registered state on the license plates of the cars. We would expect most of the cars to come from Utah (UT) and in the table above we can see that this is true, and 251 of the 300 cars we measured were from Utah, while the second most popular state was California (CA), which had only 15 cars that we measured. This is somewhat surprising, as we would expect more cars from neighboring states such as Idaho or Colorado; however, we guess that Californians like Utah better than the neighboring states do!
-
 ```{r echo=FALSE}
 
 
@@ -259,6 +174,54 @@ vw_stats <- c(vw_left_avg,vw_right_avg,vw_curb_avg)
 ```
 
 
+<h1> Introduction <h1/>
+We are were walking through the parking lot one day after stats class and looked over at a car that was parked awfully. We wondered, "why did that person park so poorly? Could it be because he is driving a small Toyota?" This gave us our final project idea. We wanted to find out what is the reason for all these awful parkers around campus. The question we then dedicated our life to answering was "What kind of car owners at the University of Utah park the best?" This will help us figure out who we should park next too and who to avoid for the rest of our time at the University. Below we have supplied the first idea sketch we made.
+
+<img src="resources/idea.png"/>
+
+
+<h1> The Imperfections Of Our Study</h1>
+While collecting our data we realized what the pitfalls were in our study.
+
+Without recording the license plate of the car (some cars also having temp plates) we could not know if we were measuring the same persons car twice. We tried to minimize this problem by measuring multiple parking lots that did not access the same group of buildings in the hope that this coincidence would not happen. 
+
+We had to consider what was the "curb". While the parking lot at the student store and The Union had an island in front of each space meaning cars would not be front to front allowing them to park slightly worse without any penalty. On the other hand the parking in MEB just had a line dividing the front making cars park more carefully (hopefully) and not as far forward.
+
+The cars in each parking lot could park facing the curb or facing the opposite side, thus many large cars with large trunks would have negative measurements.
+
+We also had no way to tell if the persons car we were measuring attended the University as a student, staff, faculty, or if they were just visiting. We have no way to tell if this person would ever return to the campus or if parking there was a one time thing.
+
+We did not measure any handicap spots in the parking lots we were at so we cannot consider that in our final conclusion.
+
+Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up agains a side curb while spots on a bend can be "crushed" because the space available. 
+
+The last constraint we had on this study was time, it took roughly an hour to measure each parking lot, or ~1 hour per 100 cars. We do not have enough time to measure every single parking space at the University of Utah so we picked the largest and most dense/popular parking lots to take our measurements from.
+
+<h1> Data Collection Process </h1>
+There are many ways that we could have collected data from the car parking lots, but to answer our question we recorded a few measurements. Listed below is how we decided to measure cars in the parking spots:
+<ul>
+  <li>We used a 25 ft tape measure and rounded our results to the nearest half inch</li>
+  <li>Measured the distance from the left side of the parking spot to the front door handle</li>
+  <li>Measured the distance from the right side of the parking spot to the front door handle</li>
+  <li>Measured the distance from the front license plate to the curb or to the front line of the parking spot
+  <li>A positive measurement is how far from the inside of the parking line the car is, and a negative measurement is how far over the car was from the inside of the line</li>
+  <li>Recorded the size of the car (small, medium, or large)</li>
+  <li>Recorded the make of the car (subaru, toyota, etc.)</li>
+  <li>Recorded the state of the license plate</li>
+  <li>We also measured the size of one of the parking spots in each lot</li>
+</ul>
+
+We wanted to choose parking lots that would give us the most random selection of cars, thus we chose the most popular and high traffic parking lots at the University of Utah:
+<ul>
+  <li>Merrill Engineering Building Parking Lot</li>
+  <li>Student Union Parking Lot</li>
+  <li>University Campus Store Parking Lot</li>
+</ul>
+
+We decided 100 cars per parking lot was a good sample size, and we measured each lot on a different days and at different times to make the sample more random.
+
+<h1> Data Table </h2>
+Below is a nice table that shows all the mean statistics for each type of car from all three parking lots (measured in inches)
 ```{r echo=FALSE}
 #make a large table
 
@@ -271,3 +234,80 @@ colnames(new_df) <- c("Left", "Right", "Curb")
 
 rmarkdown::paged_table(new_df)
 ```
+
+<h1> Analysis <h1/>
+In order to analyze our data, we should first look at the overall statistics of all three parking lots combined and we can infer some interesting things about the measurements we took.
+```{r}
+# hist of measurements
+hist(All_Parking$curb, main=paste("Histogram of all curb measurements"), xlab = paste("Distance (inches)"))
+hist(rnorm(300, mean(All_Parking$curb), sd(All_Parking$curb)), add=T, col = rgb(1, 0, 0, 0.25))
+summary(All_Parking$curb)
+```
+Looking at all the cars measurements from the curb in grey, we can see that it seems to be normally distributed compared to the theoretical distribution in red graphed over it. The average car parked 4.68 inches away from the curb or front line of the parking spot. We can also see that someone parked 75 inches away from the curb, which was most likley a smaller car parked further back. Whereas the furthest someone parked over the curb was -42 inches and was most likely a large car.
+```{r}
+hist(All_Parking$left, main=paste("Histogram of all left measurements"), xlab = paste("Distance (inches)"))
+hist(rnorm(300, mean(All_Parking$left), sd(All_Parking$left)), add=T, col = rgb(0, 1, 0, 0.25))
+summary(All_Parking$left)
+```
+In this graph above I also compare the left side parking spot measurements to a theoretical normal distribution and we can see that the actual graph in grey has a few outliers who park over the curb (negative values). The average car is parked 13.61 inches away from the left side of the parking space. The maximum someone parked was 37 inches and we can safely say they were probably parked over the right side of the line if there car was that far away from the left. We can also say the opposite for the minimum value, which was -25 inches. This tells us that they are parked 25 inches over the left side of the parking spot.
+```{r}
+hist(All_Parking$right, main=paste("Histogram of all right measurements"), xlab = paste("Distance (inches)"))
+hist(rnorm(300, mean(All_Parking$right), sd(All_Parking$right)), add=T, col = rgb(0, 0, 1, 0.25))
+summary(All_Parking$right)
+```
+Lastly, looking at the distance measurements on the right side of the parking spot compared to the theoretical normal distribution in blue, we can see that there are some extreme outliers on both sides of the graph. We can also look at the minimum and maximum which are -16 inches and 52 inches respectively. The minimum tells us that someone had parked over the line on the right hand side, and the maximum tells us someone parked over the line on the left hand side. Finally, we can infer that the average car was parked about 13.41 inches away from the right hand side of a parking spot which is very close to the left hand side mean. This could possibly mean that the average person was parked acceptably in the center of the parking space.
+
+<h3> Mean 95% Confidence Intervals </h3>
+```{r}
+# conf interval curb
+n <- 300 # sample size
+
+curb_mean <- mean(All_Parking$curb) # sample mean
+curb_sd <- sd(All_Parking$curb) # std
+
+curb_error <- qt(0.95,df=n-1)*curb_sd/sqrt(n)
+curb_lower <- curb_mean - curb_error
+curb_upper <- curb_mean + curb_error
+
+print(paste("We are 95% confident that our average/mean distance from the curb is between ", round(curb_lower, 2), " inches and ", round(curb_upper, 2), " inches"))
+
+# left
+left_mean <- mean(All_Parking$left) # sample mean
+left_sd <- sd(All_Parking$left) # std
+
+left_error <- qt(0.95,df=n-1)*left_sd/sqrt(n)
+left_lower <- left_mean - left_error
+left_upper <- left_mean + left_error
+
+print(paste("We are 95% confident that our average/mean distance from the left is between ", round(left_lower, 2), " inches and ", round(left_upper, 2), " inches"))
+
+# right
+right_mean <- mean(All_Parking$right) # sample mean
+right_sd <- sd(All_Parking$right) # std
+
+right_error <- qt(0.95,df=n-1)*right_sd/sqrt(n)
+right_lower <- right_mean - right_error
+right_upper <- right_mean + right_error
+
+print(paste("We are 95% confident that our average/mean distance from the right is between ", round(right_lower, 2), " inches and ", round(right_upper, 2), " inches"))
+```
+It is important to look at a confidence interval for our distance measurement means so we can tell how accurate our data is. Looking at our confidence interval for the mean distances of the parking spot that we measured (left, right and the curb), we can see that our average distance from the left and right sides of a parking spot to a car are very close. Thus, we can be 95% certain that the true mean of our data collected falls within our confidence interval.
+
+<h3> Analyzing the make of the cars </h3>
+```{r}
+# Types of cars
+table(All_Parking$make)
+```
+Looking at the amount of car makes, we can see that from our sample, Toyotas are the most popular choice of car, followed by Subaru then Honda. Although it does not completely help us answer the question, it shows what cars are popular at the University of Utah and it also shows that since we can not measure the same amount of cars in each parking lot, our statistics may have some bias. For example, only one Lexus was measured; thus, the mean for that brand in this study is based off of that one car, compared to the Toyota sample which has many cars measured and can give us a more accurate mean.
+
+<h3> Analyzing the make of the cars </h3>
+```{r}
+table(All_Parking$type)
+```
+Next we also recorded the size of the car. Trucks and SUV's were labeled L for Large, smaller SUV's and vans were labeled M for medium, and sedans and smaller cars were labeled S for Small. In our sample we have almost the same amount of Medium and Small cars, and very few large cars. This tells us that most people do not like to park large cars at the University of Utah.
+
+<h3> Analyzing the registered states of the cars </h3>
+```{r}
+table(All_Parking$state)
+```
+Finally we can take at the registered state on the license plates of the cars. We would expect most of the cars to come from Utah (UT) and in the table above we can see that this is true, and 251 of the 300 cars we measured were from Utah, while the second most popular state was California (CA), which had only 15 cars that we measured. This is somewhat surprising, as we would expect more cars from neighboring states such as Idaho or Colorado; however, we guess that Californians like Utah better than the neighboring states do!
