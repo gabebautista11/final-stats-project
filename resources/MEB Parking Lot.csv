@@ -92,7 +92,7 @@ curb,right,left,type,make,state,,width,length
 14,10,15,M,subi,UT,,,
 21.5,10,12,M,mazda,UT,,,
 12.5,12.5,9,S,mitsubishi,UT,,,
-7.5,9.5,11,L,ford,vt,,,
+7.5,9.5,11,L,ford,VT,,,
 10.5,13.5,13,M,nissan,UT,,,
 10.5,12.6,7.5,L,ford,UT,,,
 24,7.5,15,M,vw,UT,,,

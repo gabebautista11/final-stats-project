@@ -18,7 +18,7 @@ curb,right,left,type,make,state,,width,length
 -8,53,-19,M,nissan,UT,,,
 3,11,27,M,honda,CO,,,
 7,14,7,M,hyundai,UT,,,
--8,-1,22,M,dodge,PEN,,,
+-8,-1,22,M,dodge,PN,,,
 -9,5,17,M,subi,UT,,,
 -0.5,4,29,M,toyota,UT,,,
 13,14,15,S,vw,UT,,,

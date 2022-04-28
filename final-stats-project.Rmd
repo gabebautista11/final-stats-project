@@ -74,7 +74,7 @@ hist(All_Parking$curb, main=paste("Histogram of all curb measurements"), xlab = 
 hist(rnorm(300, mean(All_Parking$curb), sd(All_Parking$curb)), add=T, col = rgb(1, 0, 0, 0.25))
 summary(All_Parking$curb)
 ```
-Looking at all the cars measurements from the curb in grey, we can see that it seems to be normally distributed compared to the theoretical distribution in red graphed over it. The average car parked 4.68 inches away from the curb or front line of the parking spot. We can also see that someone parked 75 inches away from the curb, which was most likley a smaller car parked further back. Whereas the furthest someone parked over the curb was -42 inches and was most likley a large car.
+Looking at all the cars measurements from the curb in grey, we can see that it seems to be normally distributed compared to the theoretical distribution in red graphed over it. The average car parked 4.68 inches away from the curb or front line of the parking spot. We can also see that someone parked 75 inches away from the curb, which was most likley a smaller car parked further back. Whereas the furthest someone parked over the curb was -42 inches and was most likely a large car.
 ```{r}
 hist(All_Parking$left, main=paste("Histogram of all left measurements"), xlab = paste("Distance (inches)"))
 hist(rnorm(300, mean(All_Parking$left), sd(All_Parking$left)), add=T, col = rgb(0, 1, 0, 0.25))
@@ -92,7 +92,7 @@ Lastly, looking at the distance measurements on the right side of the parking sp
 # Types of cars
 table(All_Parking$make)
 ```
-Looking at the amount of car makes, we can see that from our sample, toyotas are the most popular choice of char, followed by subarus then hondas. Although it does not completley help us answer the question, it shows what cars are popular at the University of Utah and it also shows that since we can not measure the same amount of cars in each parking lot, our statistics may have some bias. For example, only one lexus was measured; thus, the mean for that brand in this study is based off of that one car, compared to the toyotas sample which has many cars measured and can give us a more accurate mean.
+Looking at the amount of car makes, we can see that from our sample, Toyotas are the most popular choice of car, followed by Subaru then Honda. Although it does not completely help us answer the question, it shows what cars are popular at the University of Utah and it also shows that since we can not measure the same amount of cars in each parking lot, our statistics may have some bias. For example, only one Lexus was measured; thus, the mean for that brand in this study is based off of that one car, compared to the Toyota sample which has many cars measured and can give us a more accurate mean.
 
 ```{r}
 table(All_Parking$type)
