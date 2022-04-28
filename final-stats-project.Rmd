@@ -193,7 +193,7 @@ We also had no way to tell if the persons car we were measuring attended the Uni
 
 We did not measure any handicap spots in the parking lots we were at so we cannot consider that in our final conclusion.
 
-Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up agains a side curb while spots on a bend can be "crushed" because the space available. 
+Not all parking spaces are the same size. Each parking lot we measured we added a parking space size. Even with recording the parking space size parking spots inside the same parking lot can very in sizes. Corner spots tend to have more space because they are up against a side curb while spots on a bend can be "crushed" because the space available. 
 
 The last constraint we had on this study was time, it took roughly an hour to measure each parking lot, or ~1 hour per 100 cars. We do not have enough time to measure every single parking space at the University of Utah so we picked the largest and most dense/popular parking lots to take our measurements from.
 
@@ -243,7 +243,7 @@ hist(All_Parking$curb, main=paste("Histogram of all curb measurements"), xlab = 
 hist(rnorm(300, mean(All_Parking$curb), sd(All_Parking$curb)), add=T, col = rgb(1, 0, 0, 0.25))
 summary(All_Parking$curb)
 ```
-Looking at all the cars measurements from the curb in grey, we can see that it seems to be normally distributed compared to the theoretical distribution in red graphed over it. The average car parked 4.68 inches away from the curb or front line of the parking spot. We can also see that someone parked 75 inches away from the curb, which was most likley a smaller car parked further back. Whereas the furthest someone parked over the curb was -42 inches and was most likely a large car.
+Looking at all the cars measurements from the curb in grey, we can see that it seems to be normally distributed compared to the theoretical distribution in red graphed over it. The average car parked 4.68 inches away from the curb or front line of the parking spot. We can also see that someone parked 75 inches away from the curb, which was most likely a smaller car parked further back. Whereas the furthest someone parked over the curb was -42 inches and was most likely a large car.
 ```{r}
 hist(All_Parking$left, main=paste("Histogram of all left measurements"), xlab = paste("Distance (inches)"))
 hist(rnorm(300, mean(All_Parking$left), sd(All_Parking$left)), add=T, col = rgb(0, 1, 0, 0.25))
@@ -327,6 +327,5 @@ for(i in colnames(all_make_stats_df)){
 print("Sample sum of average distance (inches)")
 print((mean(All_Parking$curb) + mean(All_Parking$left) + mean(All_Parking$right))/3)
 ```
-
 <h1> Conclusion </h1>
-In conclusion, we can infer from the data above that Acura's have the best parking at the University of Utah. However
+In conclusion, we can infer from the data above that Acura's have the best parking at the University of Utah. However, we only measured 3 Acuras. Like we how mentioned this is a imperfection of our study. The Acuras accounted for 1/100th of our study. Because of this we don't have to support our findings. Along with our findings GMC and Infiniti are the runner up car makes. Although, again we run into the same problem as we had with the Acuras, we only had 1 GMC in our study and 3 Infinitis. We did notice that Toyota average was only about .6 inches off. With measuring 58 Toyotas, almost than 1/5th of our sample size, would be the most average of the more popular car makes. With our current sample size we are not able to determine the most average car make at parking. To conclude the story, we would need a lot more data points of the less popular car models to make an accurate prediction.
